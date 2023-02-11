@@ -1,0 +1,603 @@
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(48, 48, 48);
+  border-radius: 0.5em;
+}
+
+:root {
+  font-size: 10px;
+  font-family: "poppinsmedium";
+}
+
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  transition: color 2s ease-in;
+  display: flex;
+  flex-direction: column;
+}
+body.darkmode {
+  --primary-color: black;
+  --secondary-color: white;
+  --third-color: rgb(0, 117, 252);
+  --grey-color: rgb(15, 15, 15);
+  --lighten-grey: rgb(44, 44, 44);
+}
+body.lightmode {
+  --primary-color: white;
+  --secondary-color: black;
+}
+body a {
+  color: var(--secondary-color);
+}
+body .rect-container {
+  display: flex;
+  gap: 0.4rem;
+}
+body .rect-container .rect {
+  background: var(--third-color);
+  background: linear-gradient(112deg, var(--third-color) 0%, rgba(0, 0, 0, 0) 100%);
+}
+body nav {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+body nav .container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body nav .container .menu-nav {
+  display: flex;
+}
+body nav .container .menu-nav .menuitem-nav {
+  display: block;
+  transition: all 0.5s ease;
+  z-index: 122;
+}
+body nav .container .menu-nav .menuitem-nav:hover {
+  text-shadow: 0px 0px 2px var(--primary-color), 0px 0px 4px var(--secondary-color), 0px 0px 8px var(--third-color);
+}
+body header {
+  width: 100%;
+  background-color: var(--primary-color);
+  position: relative;
+}
+body header::before {
+  content: "";
+  position: absolute;
+  top: -4rem;
+  left: -7rem;
+  background-color: var(--third-color);
+}
+body header .container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+body header .container .head-t {
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "poppinsbold";
+}
+body header .container .head-t span:nth-child(1) {
+  color: var(--secondary-color);
+  z-index: 3;
+}
+body header .container .head-t span:nth-child(2) {
+  -webkit-text-fill-color: transparent;
+}
+body header .container .headcontent {
+  color: var(--secondary-color);
+}
+body header .container .headcontent .headcontentlist {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  cursor: pointer;
+}
+body main {
+  width: 100%;
+  background-color: var(--primary-color);
+}
+body main .container {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+body main .container .card {
+  width: 100%;
+  background-color: var(--grey-color);
+}
+body main .container .card:nth-child(even) {
+  background-color: var(--primary-color);
+}
+body main .container .card .content {
+  width: 100%;
+  padding: 6rem;
+}
+body main .container .card .content h4 {
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+body main .container .card .content.aboutme {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: center;
+  gap: 1rem;
+}
+body main .container .card .content.aboutme .aboutmepict {
+  height: 30rem;
+  background-color: var(--secondary-color);
+  background-color: antiquewhite;
+}
+body main .container .card .content.aboutme .aboutmetext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+body main .container .card .content.aboutme .aboutmetext .aboutme-t {
+  display: flex;
+  flex-direction: column;
+}
+body main .container .card .content.aboutme .aboutmetext .rect {
+  width: 20%;
+  background: var(--third-color);
+  background: linear-gradient(112deg, var(--third-color) 0%, rgba(0, 0, 0, 0) 100%);
+}
+body main .container .card .content.aboutme .aboutmetext .rect:nth-child(3) {
+  width: 15%;
+}
+body main .container .card .content.aboutme .aboutmetext .rect:nth-child(4) {
+  width: 25%;
+}
+body main .container .card .content.aboutme .aboutmetext .aboutme-p {
+  font-family: "poppinslight";
+}
+body main .container .card .content.service {
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container .card .content.service .service-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+body main .container .card .content.service .service-card .service-cards {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+body main .container .card .content.service .service-card .service-cards h5 {
+  color: var(--third-color);
+  align-self: center;
+}
+body main .container .card .content.service .service-card .service-cards p {
+  font-family: "poppinslight";
+}
+body main .container .card .content.works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--secondary-color);
+}
+body main .container .card .content.works .works-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+body main .container .card .content.works .works-card .works-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body main .container .card .content.works .works-card .works-cards img {
+  width: 100%;
+}
+body main .container .card .content.works .works-card .works-cards .description {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+body main .container .card .content.works .works-card .works-cards .description .view {
+  width: 20%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.8);
+  cursor: pointer;
+  display: none;
+}
+body main .container .card .content.works .works-card .works-cards .description figcaption {
+  width: 100%;
+  font-size: 1.75rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
+}
+body main .container .card .content.works #works-btn {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+body main .container .card .content.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container .card .content.contact .aboutme-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary-color);
+}
+body main .container .card .content.contact .aboutme-main .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .container .card .content.contact .aboutme-main .left h6 {
+  display: flex;
+  align-items: center;
+}
+body main .container .card .content.contact .aboutme-main .left h6 span {
+  display: block;
+  background-color: var(--third-color);
+}
+body main .container .card .content.contact .aboutme-main .left p {
+  font-family: "poppinslight";
+}
+body main .container .card .content.contact .aboutme-main form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .container .card .content.contact .aboutme-main form label {
+  letter-spacing: 0.15em;
+}
+body main .container .card .content.contact .aboutme-main form input {
+  outline: none;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  color: var(--secondary-color);
+  max-width: 80%;
+}
+body main .container .card .content.contact .aboutme-main form textarea {
+  resize: none;
+  width: 100%;
+  max-width: 100%;
+  outline: none;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+body main .container .card .content.contact .aboutme-main form button {
+  align-self: center;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+body footer {
+  background-color: var(--grey-color);
+  width: 100%;
+}
+body footer .container {
+  margin: auto;
+  padding: 10rem 0;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body footer .container .socialmedia {
+  display: flex;
+}
+body footer .container .socialmedia a img {
+  opacity: 100%;
+}
+body footer .container .copyright {
+  color: var(--secondary-color);
+}
+body footer .container .copyright p {
+  font-family: "poppinslight";
+}
+body footer .container .copyright p span {
+  font-family: "poppinsmedium";
+}
+
+@media (max-width: 480px) {
+  body .container {
+    margin: auto;
+    width: 95%;
+    max-width: 480px;
+  }
+  body .rect-container {
+    gap: 0.2rem;
+  }
+  body .rect-container .rect {
+    width: 0.2rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+  }
+  body .rect-container .rect:nth-child(2) {
+    height: 2rem;
+  }
+  body .rect-container .rect:nth-child(3) {
+    height: 4rem;
+  }
+  body nav .container {
+    height: 3rem;
+  }
+  body nav .container .menu-nav {
+    gap: 0.5rem;
+  }
+  body nav .container .menu-nav .menuitem-nav {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    font-family: "poppinslight";
+  }
+  body nav .container .menu-nav .menuitem-nav:hover a {
+    border-bottom: 1px solid var(--third-color);
+  }
+  body nav .container .menu-nav .menuitem-nav a {
+    padding: 0.25rem 0.75rem;
+  }
+  body header::before {
+    width: 16rem;
+    height: 8rem;
+    filter: blur(6rem);
+  }
+  body header .container {
+    width: 95%;
+    max-width: 480px;
+    height: 40rem;
+  }
+  body header .container .head-t span:nth-child(1) {
+    font-size: 7rem;
+    word-spacing: -0.25em;
+    margin-bottom: -2.5rem;
+    text-shadow: 0px 2px 14px var(--primary-color), 0px 3px 20px var(--primary-color);
+  }
+  body header .container .head-t span:nth-child(2) {
+    font-size: 5rem;
+    word-spacing: -0.05em;
+    -webkit-text-stroke: 0.05rem var(--secondary-color);
+    text-shadow: 1.6rem 0.8rem 8rem var(--third-color), -0.8rem -1.6rem 10rem var(--third-color);
+  }
+  body header .container .headcontent {
+    letter-spacing: 0.05em;
+  }
+  body header .container .headcontent .headcontentlist {
+    width: 5.5rem;
+    height: 1.25rem;
+    font-size: 0.5rem;
+    box-shadow: 0px 0px 8px var(--third-color);
+    font-family: "poppinslight";
+  }
+  body header .container .headcontent .headcontentlist:nth-child(1) {
+    bottom: 22rem;
+    left: 3rem;
+  }
+  body header .container .headcontent .headcontentlist:nth-child(2) {
+    bottom: 22rem;
+    right: 3rem;
+  }
+  body header .container .headcontent .headcontentlist:nth-child(3) {
+    bottom: 13rem;
+    left: 8rem;
+  }
+  body header .container .headcontent .headcontentlist:nth-child(4) {
+    bottom: 13rem;
+    right: 8rem;
+  }
+  body main .container {
+    width: 95%;
+    max-width: 480px;
+  }
+  body main .container .card .content {
+    padding: 2rem;
+  }
+  body main .container .card .content h4 {
+    font-size: 1.75rem;
+  }
+  body main .container .card .content.aboutme {
+    gap: 0.25rem;
+  }
+  body main .container .card .content.aboutme .aboutmepict {
+    height: 15rem;
+  }
+  body main .container .card .content.aboutme .aboutmetext .aboutme-t {
+    font-size: 1.5rem;
+  }
+  body main .container .card .content.aboutme .aboutmetext .aboutme-t span:nth-child(1) {
+    font-size: 0.75rem;
+    font-family: "poppinslight";
+    margin-bottom: 0.25rem;
+  }
+  body main .container .card .content.aboutme .aboutmetext .aboutme-t span:nth-child(2) {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  body main .container .card .content.aboutme .aboutmetext .rect {
+    height: 0.15rem;
+    margin-top: 0.25rem;
+  }
+  body main .container .card .content.aboutme .aboutmetext .aboutme-p {
+    font-size: 0.65rem;
+    margin-top: 0.5rem;
+    line-height: 1.75em;
+    letter-spacing: 0.075em;
+  }
+  body main .container .card .content.service .service-card {
+    gap: 0.5rem;
+  }
+  body main .container .card .content.service .service-card .service-cards {
+    padding: 0.75rem;
+    min-height: 7rem;
+    gap: 1rem;
+    border: 1px solid var(--grey-color);
+  }
+  body main .container .card .content.service .service-card .service-cards h5 {
+    font-size: 1rem;
+  }
+  body main .container .card .content.service .service-card .service-cards p {
+    font-size: 0.5rem;
+    line-height: 1.25em;
+  }
+  body main .container .card .content.works .works-card {
+    gap: 0.5rem;
+  }
+  body main .container .card .content.works #works-btn {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    min-width: 8rem;
+    height: 1.25rem;
+    letter-spacing: 0.1em;
+  }
+  body main .container .card .content.contact .aboutme-main {
+    flex-direction: column;
+  }
+  body main .container .card .content.contact .aboutme-main .left {
+    align-self: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  body main .container .card .content.contact .aboutme-main .left h6 {
+    font-size: 1rem;
+  }
+  body main .container .card .content.contact .aboutme-main .left h6 span {
+    margin-right: 0.25rem;
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+  body main .container .card .content.contact .aboutme-main .left p {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    margin-left: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+  body main .container .card .content.contact .aboutme-main form {
+    width: 100%;
+  }
+  body main .container .card .content.contact .aboutme-main form label {
+    font-size: 0.75rem;
+    margin-bottom: 0.1rem;
+  }
+  body main .container .card .content.contact .aboutme-main form input {
+    border: 1.5px solid var(--lighten-grey);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  body main .container .card .content.contact .aboutme-main form textarea {
+    border: 1.5px solid var(--lighten-grey);
+    font-size: 1rem;
+    height: 8rem;
+  }
+  body main .container .card .content.contact .aboutme-main form #alert {
+    margin-top: 0.25rem;
+    font-size: 0.65rem;
+    font-family: "poppinslight";
+  }
+  body main .container .card .content.contact .aboutme-main form button {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    min-width: 5rem;
+    height: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  body footer .container {
+    width: 95%;
+    max-width: 480px;
+    padding: 4rem 0;
+  }
+  body footer .container .socialmedia {
+    gap: 0.25rem;
+  }
+  body footer .container .socialmedia a {
+    padding: 0.2rem 0.2rem;
+  }
+  body footer .container .socialmedia a img {
+    width: 1.5rem;
+  }
+  body footer .container .copyright {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 769px) {
+  body header .container .headcontentlist .headcontentlist {
+    -webkit-animation: updown 3s alternate infinite;
+            animation: updown 3s alternate infinite;
+  }
+  @-webkit-keyframes updown {
+    0% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes updown {
+    0% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  body header .container .headcontentlist .headcontentlist:nth-child(1) {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+  }
+  body header .container .headcontentlist .headcontentlist:nth-child(2) {
+    -webkit-animation-delay: 0.75s;
+            animation-delay: 0.75s;
+  }
+  body header .container .headcontentlist .headcontentlist:nth-child(3) {
+    -webkit-animation-delay: 0.25s;
+            animation-delay: 0.25s;
+  }
+}/*# sourceMappingURL=style.css.map */
